@@ -25,13 +25,6 @@
         <br>
         <hr>
         <br>
-<<<<<<< HEAD
-        <button type="button" onclick="location.href='login.php'">Logout</button>
-    </form>
-
-<?php
-require 'config.php'; 
-=======
         <button type="button" onclick="location.href='logout.php'">Logout</button>
     </form>
 
@@ -57,7 +50,6 @@ print_r($_SESSION);
 //     header("Location: login.php");
 //     exit();
 // }
->>>>>>> cb017f9 (updating)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['click'])) { 
@@ -101,8 +93,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> cb017f9 (updating)

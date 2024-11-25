@@ -8,10 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 if (isset($_GET['view'])) {
     $Dir = '/var/www/html/uploads/';
-<<<<<<< HEAD
-=======
     
->>>>>>> cb017f9 (updating)
     $files = array_diff(scandir($Dir), array('..', '.'));
     
     if (count($files) > 0) {

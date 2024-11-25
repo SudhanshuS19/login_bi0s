@@ -13,11 +13,7 @@ if (isset($_POST["submit"])) {
     
     $duplicate = mysqli_query($conn, "SELECT * FROM `data` WHERE username='$username' OR email='$email'");
     
-<<<<<<< HEAD
-    if (mysqli_num_rows($duplicate) > 0) {
-=======
     if (mysqli_num_rows($duplicate) > 0 or $username==='admin') {
->>>>>>> cb017f9 (updating)
         echo "<script> alert('Username or email has already been taken!! PLEASE TRY AGAIN'); </script>";
     } else {
         if ($password === $confirmpassword) {
