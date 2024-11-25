@@ -25,11 +25,39 @@
         <br>
         <hr>
         <br>
+<<<<<<< HEAD
         <button type="button" onclick="location.href='login.php'">Logout</button>
     </form>
 
 <?php
 require 'config.php'; 
+=======
+        <button type="button" onclick="location.href='logout.php'">Logout</button>
+    </form>
+
+<?php
+require 'config.php';
+session_start();
+if ($_SESSION['admin']!="ok") {
+    header("Location: login.php");
+    exit(); 
+
+}
+print_r($_SESSION);
+//else{
+//     header("Location:login.php");
+// }
+// if (session_status() === PHP_SESSION_NONE) {
+//     session_start();
+// if (!isset($_SESSION["username"]) || $_SESSION["username"] !== 'admin') {
+//     header("Location: login.php");
+//     exit(); 
+
+// if ($_SESSION["login"]!=true) {
+//     header("Location: login.php");
+//     exit();
+// }
+>>>>>>> cb017f9 (updating)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['click'])) { 
@@ -73,4 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> cb017f9 (updating)
