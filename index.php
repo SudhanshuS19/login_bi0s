@@ -36,6 +36,9 @@ if (isset($_GET['view'])) {
           </form>';
     echo '<form action="" method="get">
             <button type="submit" name="view">View all uploaded files</button>
+          </form><br>';
+    echo '<form action="logout.php" method="post">
+            <button type="submit" name="logout">Logout</button>
           </form>';
 }
 ?>
