@@ -10,19 +10,25 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
     $confirmpassword = $_POST["confirmpassword"];
-    
-    $duplicate = mysqli_query($conn, "SELECT * FROM `data` WHERE username='$username' OR email='$email'");
+
+    $stmt=$conn->prepare("SELECT * FROM `data` WHERE username=? OR email=?");
+    $stmt->bind_param("ss",$username,$email);
+    $stmt->execute();
+    $duplicate=$stmt->get_result();
+    // $duplicate = mysqli_query($conn, "SELECT * FROM `data` WHERE username='$username' OR email='$email'");
     
     if (mysqli_num_rows($duplicate) > 0 or $username==='admin') {
         echo "<script> alert('Username or email has already been taken!! PLEASE TRY AGAIN'); </script>";
     } else {
         if ($password === $confirmpassword) {
-            $query = "INSERT INTO `data` (name, username, email, password) VALUES ('$name', '$username', '$email', '$password')";
-            if (mysqli_query($conn, $query)) {
+            $stmt = $conn->prepare("INSERT INTO `data` (name, username, email, password) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $name, $username, $email, $password);
+            if ($stmt->execute()) {
                 echo "<script> alert('Registration Successful'); </script>";
             } else {
-                echo "<script> alert('Error in registration: " . mysqli_error($conn) . "'); </script>";
+                echo "<script> alert('Error in registration: " . $stmt->error . "'); </script>";
             }
+
         } else {
             echo "<script> alert('Enter Correct Password!'); </script>";   
         }

@@ -15,8 +15,11 @@ if (isset($_POST["submit"])) {
     }
     
     
-    $result = mysqli_query($conn, "SELECT * FROM data WHERE username='$usernameemail' OR email='$usernameemail'");
-
+    $stmt = $conn->prepare("SELECT * FROM data WHERE username=? OR email=?");
+    $stmt->bind_param("ss", $usernameemail, $usernameemail);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
     
     if ($usernameemail == 'admin' && $password == 'admin') {
         $_SESSION["admin"] = "ok";

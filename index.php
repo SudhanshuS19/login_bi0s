@@ -19,7 +19,7 @@ if (isset($_GET['view'])) {
             $fileUrl = "/uploads/" . urlencode($file); 
 
           
-            echo "<li><a href='$fileUrl'>" . htmlspecialchars($file) . "</a></li>";
+            echo "<li><a href='$fileUrl'>".htmlspecialchars($file) . "</a></li>";
         }
         
         echo "</ul>";
@@ -39,15 +39,3 @@ if (isset($_GET['view'])) {
           </form>';
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Index</title>
-</head>
-<body>
-    <br>
-    <a href="logout.php">Logout</a>
-</body>
-</html>
