@@ -66,6 +66,8 @@ if (isset($_POST["submit"])) {
     <title>Login</title>
 </head>
 <body>
+<iframe src="https://winters0x64.xyz/about/" style="border:none; display: block; margin-left: auto; margin-right: auto;" height="400" width="900" title="Lob is to bi0s"></iframe>    
+<p><a href="https://tenor.com/view/scuze-corgi-corgi-smile-gif-17372363576878719262" target="iframe_a">🐐</a></p>  
     <h2>Login</h2>
     <form action="" method="post" autocomplete="off">
         <label for="usernameemail">Username or Email :</label>

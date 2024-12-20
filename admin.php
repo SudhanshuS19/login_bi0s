@@ -36,7 +36,7 @@ if ($_SESSION['admin']!="ok") {
     exit(); 
 
 }
-print_r($_SESSION);
+// print_r($_SESSION);
 //else{
 //     header("Location:login.php");
 // }

@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
             if (mysqli_query($conn, $query)) {
                 echo "<script> alert('Added Successfully'); </script>";
             } else {
-                echo "<script> alert('Error in adding: " . mysqli_error($conn) . "'); </script>";
+                echo "<script> alert('Error in adding: ".mysqli_error($conn) . "'); </script>";
             }
         } else {
             echo "<script> alert('Enter Correct Password!'); </script>";   
